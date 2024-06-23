@@ -12,14 +12,14 @@ function updateTime() {
     );
   }
   //London 🇬🇧
-  let londonEleemnt = document.querySelector("#london");
-  if (londonEleemnt) {
-    let londonDateElement = londonEleemnt.querySelector(".date");
-    let londonTimeElement = londonEleemnt.querySelector(".time");
-    let londonTime = moment().tz("Europe/London");
+  let belgradeEleemnt = document.querySelector("#belgrade");
+  if (belgradeEleemnt) {
+    let belgradeDateElement = belgradeEleemnt.querySelector(".date");
+    let belgradeTimeElement = belgradeEleemnt.querySelector(".time");
+    let belgradeTime = moment().tz("Europe/Belgrade");
 
-    londonDateElement.innerHTML = londonTime.format("MMMM Do YYYY");
-    londonTimeElement.innerHTML = londonTime.format(
+    belgradeDateElement.innerHTML = belgradeTime.format("MMMM Do YYYY");
+    belgradeTimeElement.innerHTML = belgradeTime.format(
       `hh:mm:ss [<small>]A[</small>]`
     );
   }
@@ -27,6 +27,9 @@ function updateTime() {
 
 function updateCity(event) {
   let cityTimeZone = event.target.value;
+  if (cityTimeZone === "current") {
+    cityTimeZone = moment.tz.guess();
+  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
