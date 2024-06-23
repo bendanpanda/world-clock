@@ -1,9 +1,9 @@
 function updateTime() {
   //Sofia 🇧🇬
-  let sofiaEleemnt = document.querySelector("#sofia");
-  if (sofiaEleemnt) {
-    let sofiaDateElement = sofiaEleemnt.querySelector(".date");
-    let sofiaTimeElement = sofiaEleemnt.querySelector(".time");
+  let sofiaElement = document.querySelector("#sofia");
+  if (sofiaElement) {
+    let sofiaDateElement = sofiaElement.querySelector(".date");
+    let sofiaTimeElement = sofiaElement.querySelector(".time");
     let sofiaTime = moment().tz("Europe/Sofia");
 
     sofiaDateElement.innerHTML = sofiaTime.format("MMMM Do YYYY");
@@ -11,15 +11,27 @@ function updateTime() {
       `hh:mm:ss [<small>]A[</small>]`
     );
   }
-  //London 🇬🇧
-  let belgradeEleemnt = document.querySelector("#belgrade");
-  if (belgradeEleemnt) {
-    let belgradeDateElement = belgradeEleemnt.querySelector(".date");
-    let belgradeTimeElement = belgradeEleemnt.querySelector(".time");
+  //Belgrade 🇷🇸
+  let belgradeElement = document.querySelector("#belgrade");
+  if (belgradeElement) {
+    let belgradeDateElement = belgradeElement.querySelector(".date");
+    let belgradeTimeElement = belgradeElement.querySelector(".time");
     let belgradeTime = moment().tz("Europe/Belgrade");
 
     belgradeDateElement.innerHTML = belgradeTime.format("MMMM Do YYYY");
     belgradeTimeElement.innerHTML = belgradeTime.format(
+      `hh:mm:ss [<small>]A[</small>]`
+    );
+  }
+  //Tirana 🇦🇱
+  let tiranaElement = document.querySelector("#tirana");
+  if (tiranaElement) {
+    let tiranaDateElement = tiranaElement.querySelector(".date");
+    let tiranaTimeElement = tiranaElement.querySelector(".time");
+    let tiranaTime = moment().tz("Europe/Tirane");
+
+    tiranaDateElement.innerHTML = tiranaTime.format("MMMM Do YYYY");
+    tiranaTimeElement.innerHTML = tiranaTime.format(
       `hh:mm:ss [<small>]A[</small>]`
     );
   }
